@@ -40,6 +40,33 @@
             bolinha.style.top = y + 'px';
         });
     </script>
-     <img id="bolinha" src="img/tanque2.png" alt="Bolinha">
+
+
+
+     <img id="tanque2" src="img/tanque2.png" alt="Bolinha">
+
+<script>
+        const bolinha = document.getElementById('tanque2');
+        let x = window.innerWidth / 2;
+        let y = window.innerHeight / 2;
+        const velocidade = 5;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'w') y -= velocidade;
+            if (e.key === 's') y += velocidade;
+            if (e.key === 'a') x -= velocidade;
+            if (e.key === 'd') x += velocidade;
+
+            // Limita dentro da tela
+            x = Math.max(25, Math.min(x, window.innerWidth - 25));
+            y = Math.max(25, Math.min(y, window.innerHeight - 25));
+
+            tanque2.style.left = x + 'px';
+            tanque2.style.top = y + 'px';
+        });
+    </script>
+
+
+
 </body>
 </html>
